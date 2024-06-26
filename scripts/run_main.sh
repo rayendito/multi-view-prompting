@@ -33,7 +33,7 @@ mkdir -p $OUT_DIR
 python main.py \
     --data_path "../data/" \
     --dataset $DATA \
-    --model_name_or_path t5-base \
+    --model_name_or_path mt5-base \
     --output_dir $OUT_DIR \
     --num_train_epochs 20 \
     --save_top_k 0 \
