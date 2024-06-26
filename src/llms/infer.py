@@ -10,7 +10,8 @@ from main import init_args, set_seed
 from llms.api import llm_chat
 
 
-opinion2sentword = {'great': 'positive', 'bad': 'negative', 'ok': 'neutral'}
+# opinion2sentword = {'great': 'positive', 'bad': 'negative', 'ok': 'neutral'}
+opinion2sentword = {'bagus': 'positive', 'jelek': 'negative', 'biasa': 'neutral'}
 
 def load_prompt(task, data, prompt_type):
     prompt_path = f"llms/prompts/{task}_{data}_{prompt_type}.txt"

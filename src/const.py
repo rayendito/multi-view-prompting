@@ -1,7 +1,9 @@
 import json
 
-senttag2opinion = {'pos': 'great', 'neg': 'bad', 'neu': 'ok'}
-sentword2opinion = {'positive': 'great', 'negative': 'bad', 'neutral': 'ok'}
+# senttag2opinion = {'pos': 'great', 'neg': 'bad', 'neu': 'ok'}
+# sentword2opinion = {'positive': 'great', 'negative': 'bad', 'neutral': 'ok'}
+senttag2opinion = {'pos': 'bagus', 'neg': 'jelek', 'neu': 'biasa'}
+sentword2opinion = {'positive': 'bagus', 'negative': 'jelek', 'neutral': 'biasa'}
 
 rest_aspect_cate_list = [
     'location general', 'food prices', 'food quality', 'food general',
@@ -74,17 +76,18 @@ cate_list = {
 }
 
 task_data_list = {
-    "aste": ["laptop14", "rest14", "rest15", "rest16"],
+    # "aste": ["laptop14", "rest14", "rest15", "rest16"],
+    "aste": ["ecommerce", "education", "pharmacy", "politics"],
     "tasd": ['rest15', "rest16"],
     "acos": ['laptop16', "rest16"],
     "asqp": ['rest15', "rest16"],
 }
 force_words = {
     'aste': {
-        'rest15': list(senttag2opinion.values()) + ['[SSEP]'],
-        'rest16': list(senttag2opinion.values()) + ['[SSEP]'],
-        'rest14': list(senttag2opinion.values()) + ['[SSEP]'],
-        'laptop14': list(senttag2opinion.values()) + ['[SSEP]']
+        'ecommerce': list(senttag2opinion.values()) + ['[SSEP]'],
+        'education': list(senttag2opinion.values()) + ['[SSEP]'],
+        'pharmacy': list(senttag2opinion.values()) + ['[SSEP]'],
+        'politics': list(senttag2opinion.values()) + ['[SSEP]']
     },
     'tasd': {
         "rest15": rest_aspect_cate_list + list(sentword2opinion.values()) + ['[SSEP]'],
@@ -103,19 +106,19 @@ force_words = {
 
 optim_orders_all = {
             "aste": {
-                "laptop14": [
+                "ecommerce": [
                     '[O] [A] [S]', '[A] [O] [S]', '[O] [S] [A]',
                     '[A] [S] [O]', '[S] [O] [A]', '[S] [A] [O]'
                 ],
-                "rest14": [
+                "education": [
                     '[O] [A] [S]', '[O] [S] [A]', '[A] [O] [S]',
                     '[A] [S] [O]', '[S] [O] [A]', '[S] [A] [O]'
                 ],
-                "rest15": [
+                "pharmacy": [
                     '[A] [O] [S]', '[O] [A] [S]', '[O] [S] [A]',
                     '[A] [S] [O]', '[S] [O] [A]', '[S] [A] [O]'
                 ],
-                "rest16": [
+                "politics": [
                     '[O] [A] [S]', '[A] [O] [S]', '[O] [S] [A]',
                     '[A] [S] [O]', '[S] [O] [A]', '[S] [A] [O]'
                 ],
